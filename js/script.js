@@ -372,27 +372,15 @@ function celebrateSpecialDay() {
     // Criar explosão de corações
     createHeartExplosion();
     
-    // Mostrar mensagem especial
+    // Mostrar mensagem sem animação
     const countdownContainer = document.querySelector('.countdown-container');
     if (countdownContainer) {
-        gsap.to(countdownContainer, {
-            scale: 0,
-            opacity: 0,
-            duration: 0.5,
-            onComplete: () => {
-                countdownContainer.innerHTML = `
-                    <div class="celebration-message">
-                        <h2>🎉 Feliz Dia dos Namorados! 🎉</h2>
-                        <p>Hoje é nosso dia especial!</p>
-                    </div>
-                `;
-                
-                gsap.fromTo(countdownContainer, 
-                    { scale: 0, opacity: 0 },
-                    { scale: 1, opacity: 1, duration: 1, ease: "elastic.out(1, 0.3)" }
-                );
-            }
-        });
+        countdownContainer.innerHTML = `
+            <div class="celebration-message">
+                <h2>🎉 Feliz Dia dos Namorados! 🎉</h2>
+                <p>Hoje é nosso dia especial!</p>
+            </div>
+        `;
     }
 }
 
